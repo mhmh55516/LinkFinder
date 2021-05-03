@@ -133,7 +133,7 @@ def send_request(url):
         sslcontext = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
         response = urlopen(q, timeout=args.timeout, context=sslcontext)
     except:
-        sslcontext = ssl.SSLContext(ssl.PROTOCOL_TLSv1)
+        sslcontext = ssl.SSLContext(ssl.PROTOCOL_SSLv3)
         response = urlopen(q, timeout=args.timeout, context=sslcontext)
 
     if response.info().get('Content-Encoding') == 'gzip':
